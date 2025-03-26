@@ -16,8 +16,9 @@ function UserList({ users, onEdit, fetchUsers }) {
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Actions</th>
             <th>Org.</th>
+            <th>Actions</th>
+            
           </tr>
         </thead>
         <tbody>
