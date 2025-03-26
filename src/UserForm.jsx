@@ -3,7 +3,7 @@ import Reach, { useState, useEffect } from "react";
 import { createUser, updateUser } from "./services/api";
 
 function userForm({ currentUser, onSave }) {
-  const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ name: "", email: "", org: "" });
 
   useEffect(() => {
     if (currentUser) {
@@ -23,7 +23,7 @@ function userForm({ currentUser, onSave }) {
       await createUser(user);
     }
     onSave();
-    setUser({ name: "", email: "" });
+    setUser({ name: "", email: "" , org: ""});
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -41,6 +41,15 @@ function userForm({ currentUser, onSave }) {
         <input
           type="email"
           name="email"
+          value={user.email}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label>Org</label>
+        <input
+          type="org"
+          name="org"
           value={user.email}
           onChange={handleChange}
         />
